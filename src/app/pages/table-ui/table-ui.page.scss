@@ -1,0 +1,127 @@
+ion-title {
+  font-weight: bold;
+}
+th {
+  /* Set background color and font color for table header */
+  background-color: #3484F0;
+  color: #fff;
+}
+
+tr {
+  /* Set background color for table rows */
+  background-color: #F7F7F7;
+}
+
+tr:nth-child(even) {
+  /* Set a different background color for even rows */
+  background-color: #C4DBFA;
+}
+
+tr:hover {
+  /* Set background color when hovering over a row */
+  background-color: #dcdcdc;
+}
+
+/* Styling for ion-card element */
+ion-card {
+  border-radius: 20px;
+}
+
+/* Styling for the container wrapping the tables */
+.table-container {
+  padding: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+/* Custom styles for the ion-menu */
+ion-menu {
+  --ion-background-color: #f0f0f0; /* Change the background color */
+  --width: 250px; /* Change the width of the menu */
+}
+
+/* Styling for ion-content element */
+ion-content {
+  padding: 40px;
+  margin: 40px;
+}
+
+/* Styling for the wrapper container using flexbox */
+.wrapper {
+  display: flex;
+}
+
+/* Styling for the sidebar */
+.sidebar {
+  background-color: #f8f8f8;
+  width: 250px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Styling for the logo image */
+.logo-image {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+/* Styling for the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* Styling for table cells (header and data cells) */
+th, td {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Styling for ion-item element */
+ion-item{
+  padding-bottom: 30px;
+}
+
+/* Styling for paragraphs */
+p {
+  padding: 10px;
+}
+
+/* Styling for ion-card-content element */
+ion-card-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f8f8; /* Sidebar background color */
+}
+
+/* Styling for ion-card-header element */
+ion-card-header {
+  font-weight: bolder;
+}
+
+/* Styling for the sidebar header container */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+}
+
+/* Styling for the username container */
+.username-container {
+  margin-left: 16px;
+  font-size: 50px;
+}
+
+
+
+
+
+
+
+
+
+  

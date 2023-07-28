@@ -1,0 +1,98 @@
+<ion-content>
+  <!-- Cat List Main Content Area -->
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Cat List
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-grid>
+    <ion-row>
+      <!-- Sidebar Column -->
+      <ion-col size="3">
+        <!-- Sidebar content (user name, logo, logout icon, etc.) -->
+        <ion-card>
+          <ion-card-header>
+            Internship Project
+          </ion-card-header>
+          <ion-card-content>
+            <!-- Sidebar Content -->
+            <div class="sidebar-header">
+              <ion-avatar class="avatar-container">
+                <img src="assets/icon/abata-icon.png">
+              </ion-avatar>
+              <div class="username-container">
+                <p style="font-size: 1.2rem;">Nazif Aqif</p>
+              </div>
+            </div>
+            <p><ion-icon name="clipboard-outline"></ion-icon>Dashboard</p>
+            <p><ion-icon name="create-outline"></ion-icon>Task</p>
+            <p><ion-icon name="notifications-outline"></ion-icon>Notification</p>
+            <p><ion-icon name="log-out-outline"></ion-icon> Logout</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <!-- Main Content Column -->
+      <ion-col size="8">
+        <!-- searchbar function -->
+        <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="filterItems()"></ion-searchbar>
+        <!-- breeds & facts button -->
+        <ion-segment [(ngModel)]="selectedDataType" (ionChange)="onDataTypeChange()">
+          <ion-segment-button value="breeds">
+            Breeds
+          </ion-segment-button>
+          <ion-segment-button value="facts">
+            Facts
+          </ion-segment-button>
+        </ion-segment>
+
+        <!-- Table for displaying Cat Breeds -->
+        <div class="table-container">
+          <table *ngIf="selectedDataType === 'breeds' && catBreedsData.length > 0">
+            <!-- Table header -->
+            <thead>
+              <tr>
+                <th>Breed</th>
+                <th>Country</th>
+                <th>Origin</th>
+                <th>Coat</th>
+                <th>Pattern</th>
+              </tr>
+            </thead>
+            <!-- Table rows with pagination -->
+            <tbody>
+              <tr *ngFor="let breed of filteredData | paginate: { itemsPerPage: pageSize, currentPage: p }">
+                <td>{{ breed.breed }}</td>
+                <td>{{ breed.country }}</td>
+                <td>{{ breed.origin }}</td>
+                <td>{{ breed.coat }}</td>
+                <td>{{ breed.pattern }}</td>
+              </tr>
+            </tbody>
+          </table>
+      
+          <table *ngIf="selectedDataType === 'facts' && catFactsData.length > 0">
+            <!--  for displaying Cat Facts -->
+            <thead>
+              <tr>
+                <th>Facts</th>
+                <th>Length</th>
+              </tr>
+            </thead>
+            <!-- Table rows with pagination -->
+            <tbody>
+              <tr *ngFor="let fact of filteredData | paginate: { itemsPerPage: pageSize, currentPage: p }">
+                <td>{{ fact.fact }}</td>
+                <td>{{ fact.length }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Pagination control -->
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
